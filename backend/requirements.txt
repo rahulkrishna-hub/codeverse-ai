@@ -1,0 +1,6 @@
+# Runtime: the trace engine itself is pure standard library. Only the HTTP layer needs these.
+starlette>=0.40
+uvicorn>=0.30
+pydantic>=2.6
+httpx>=0.27        # only for TestClient in tests
+# To use FastAPI instead of bare Starlette: pip install fastapi  (handlers in app/main.py port 1:1)
