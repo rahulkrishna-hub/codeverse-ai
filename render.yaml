@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: codeverse-ai
+    runtime: python
+    buildCommand: bash build.sh
+    startCommand: cd backend && python -m uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.0"
+      - key: NODE_VERSION
+        value: "20.11.0"
+      - key: CV_WALL_TIMEOUT_S
+        value: "6"
+      - key: CV_CPU_SECONDS
+        value: "4"
+      - key: CV_MEMORY_MB
+        value: "768"
+    plan: free
